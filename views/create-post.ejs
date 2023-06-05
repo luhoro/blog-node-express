@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+
+        <main class="main">
+            <h1>This is a page of create a post</h1>
+            <section class="section">
+
+                <% if (registered) { %>
+                    <h2>Post Sent!</h2>
+                    <% } %>
+
+                        <form action="/save-post" method="post">
+                            <label for="title">Title</label>
+                            <input id="title" name="title" type="text"
+                                placeholder="Write the title of the post"><br><br>
+
+                            <label for="text">Text</label>
+                            <textarea id="text" name="text" placeholder="Write the text of the post"></textarea><br><br>
+
+                            <button type="submit">Send</button>
+                        </form>
+
+            </section>
+
+        </main>
+        <%- include('partials/footer.ejs') %>
+            <%- include('partials/foot.ejs') %>
+</body>
+
+</html>

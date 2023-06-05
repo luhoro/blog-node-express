@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<%- include('partials/head.ejs') %>
+</head>
+
+<body>
+	<%- include('partials/header.ejs') %>
+
+		<main class="main">
+			<h1>This is a posts page</h1>
+			<section class="section">
+				<div class="posts">
+					<% posts.forEach(item=> { %>
+						<div class="post">
+
+							<% if(item.stars) { %>
+								<div class="stars">
+									<% for( let index=0; index < item.stars; index++ ) { %>
+										<img src="https://www.svgrepo.com/show/505780/star-1.svg" width="25px" alt="" />
+										<% } %>
+
+								</div>
+								<% } %>
+
+									<h3>
+										<%= item.title %>
+									</h3>
+									<p>
+										<%= item.text %>
+									</p>
+
+						</div>
+
+						<% }); %>
+				</div>
+			</section>
+		</main>
+
+
+		<%- include('partials/footer.ejs') %> <%- include('partials/foot.ejs') %>
+</body>
+
+</html>
